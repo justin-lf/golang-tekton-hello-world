@@ -16,7 +16,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	name := query.Get("name")
 	log.Printf("Received request for %s\n", name)
-	w.Write([]byte(CreateGreeting(name)))
+	if err := w.Write([]byte(CreateGreeting(name))); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func CreateGreeting(name string) string {
