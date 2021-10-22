@@ -6,6 +6,8 @@ WORKDIR $GOPATH/src/github.com/codefresh-contrib/go-sample-app
 # # Copy everything from the current directory to the PWD(Present Working Directory) inside the container
 COPY . .
 
+COPY go.mod usr/src/app
+
 # # Download all the dependencies
 RUN go get -d -v ./...
 
