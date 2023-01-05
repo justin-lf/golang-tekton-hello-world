@@ -13,3 +13,4 @@ steps:
     working_directory: ./
     tag: full
     dockerfile: Dockerfile
+
