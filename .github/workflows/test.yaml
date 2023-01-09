@@ -1,4 +1,4 @@
-name: 'Terraform Format-Validate'
+name: 'Main1'
 
 on:
   pull_request:
