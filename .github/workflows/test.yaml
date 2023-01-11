@@ -27,7 +27,7 @@ jobs:
         git config --global 'credential.helper' 'store'
         git config --global --replace-all 'url.https://github.com/.insteadOf' 'ssh://git@github.com/'
         git config --global --add 'url.https://github.com/.insteadOf' 'git@github.com:'
-        git clone https://github.com/justin-lf/crosscd.git
+        git clone https://github.com/justin-lf/cloudbees-core.git
         ls -al
 
         
