@@ -18,7 +18,7 @@ jobs:
     - name: Setup Git
       uses: actions/checkout@v3
       with:
-        credentials: ${{secrets.TEST_PAT1}}
+        credentials: ${{secrets.TEST_PAT}}
     - run: |
         mkdir -p $XDG_CONFIG_HOME/.config/git
         touch $XDG_CONFIG_HOME/.config/git/credentials
