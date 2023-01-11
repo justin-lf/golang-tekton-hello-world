@@ -27,5 +27,6 @@ jobs:
         ls -al
         cd .git/
         ls -al
+        less config
         git config --list
         
