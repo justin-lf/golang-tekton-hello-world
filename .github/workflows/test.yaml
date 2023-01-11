@@ -23,7 +23,9 @@ jobs:
       with:
         credentials: ${{secrets.TEST_PAT}}
     - run: |
+        whoami
         ls -al
-        ls -al ~/.git/
+        cd .git/
+        ls -al
         git config --list
         
