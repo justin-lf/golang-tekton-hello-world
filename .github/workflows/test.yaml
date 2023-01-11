@@ -27,6 +27,7 @@ jobs:
         pwd
         echo $XDG_CONFIG_HOME
         ls -al ~/.config
+        less ~/.config/git/credentials
         ls -al
         cd .git/
         ls -al
