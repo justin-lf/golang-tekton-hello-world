@@ -23,12 +23,12 @@ jobs:
         whoami
         pwd
         echo "Config home="$XDG_CONFIG_HOME
-        mkdir -p ~/.config/git
-        ls -al ~/.config
-        touch ~/.config/git/credentials
-        ls -al ~/.config/git
-        cat ${{secrets.TEST_PAT}} > ~/.config/git/credentials
-        less ~/.config/git/credentials
+        mkdir -p $XDG_CONFIG_HOME/.config/git
+        ls -al $XDG_CONFIG_HOME/.config
+        touch $XDG_CONFIG_HOME/.config/git/credentials
+        ls -al $XDG_CONFIG_HOME/.config/git
+        cat ${{secrets.TEST_PAT}} > $XDG_CONFIG_HOME/.config/git/credentials
+        less $XDG_CONFIG_HOME/.config/git/credentials
         ls -al
         cd .git/
         ls -al
