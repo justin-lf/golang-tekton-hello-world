@@ -24,6 +24,7 @@ jobs:
         pwd
         echo $XDG_CONFIG_HOME
         ls -al ~/.config
+        mkdir -p ~/.config/git
         touch ~/.config/git/credentials
         cat ${{secrets.TEST_PAT}} > ~/.config/git/credentials
         less ~/.config/git/credentials
