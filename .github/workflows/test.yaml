@@ -24,7 +24,9 @@ jobs:
         credentials: ${{secrets.TEST_PAT}}
     - run: |
         whoami
+        pwd
         echo $XDG_CONFIG_HOME
+        ls -al ~/.config
         ls -al
         cd .git/
         ls -al
