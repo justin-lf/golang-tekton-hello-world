@@ -25,4 +25,6 @@ jobs:
     - run: |
         ls -al
         less ~/.git/conifg
+        ls -al ~/.git/
+        git config --list
         
