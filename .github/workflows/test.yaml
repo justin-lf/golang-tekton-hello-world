@@ -19,7 +19,6 @@ jobs:
     - uses: hashicorp/setup-terraform@v2
 
     - name: Setup Git
-      uses: de-vri-es/setup-git-credentials@v2
       with:
         credentials: ${{secrets.TEST_PAT}}
     - run: |
