@@ -22,7 +22,7 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
     - run: |
-        git config --global "url.https://${{secrets.GIT_USERNAME}}:${{secrets.GIT_PASSWORD}}@github.com/.insteadOf" "https://github.com/"
+        git config --global url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com".insteadOf https://github.com
         git clone https://github.com/justin-lf/cloudbees-core.git
         ls -al
 
