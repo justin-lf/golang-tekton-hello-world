@@ -24,8 +24,8 @@ jobs:
     - run: |
         git config list
         git config --global --replace-all url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "ssh://git@github.com/"
-        git config --global --add url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "git@github.com:"
-        git config --global --add url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com".insteadOf "https://git@github.com/"
+        git config --global url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "git@github.com:"
+        git config --global url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "https://github.com/"
         git config list
         git clone git@github.com:justin-lf/cloudbees-core.git
         ls -al
