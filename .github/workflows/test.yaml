@@ -1,9 +1,8 @@
 name: 'Main1'
 
 on:
-  pull_request:
-    types: [opened, reopened]
-  
+  push:
+    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
@@ -22,13 +21,6 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
     - run: |
-        git config --list
-        echo "**BREAK**"
-        git config --global --replace-all url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "ssh://git@github.com/"
-        git config --global --add url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "git@github.com:"
-        git config --global --add url."https://oauth2:${{secrets.GIT_PASSWORD}}@github.com/".insteadOf "https://github.com/"
-        git config --list
-        git clone git@github.com:justin-lf/cloudbees-core.git
-        ls -al
+        env
 
         
