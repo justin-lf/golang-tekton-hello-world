@@ -23,4 +23,8 @@ jobs:
         ACTOR: ${{github.actor}}
     - run: |
        env
-        
+   
+    - run: echo hi > world.txt
+    - uses: actions/upload-artifact@v3
+      with:
+        path: world.txt
