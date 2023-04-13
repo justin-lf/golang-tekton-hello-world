@@ -21,10 +21,11 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
         ACTOR: ${{github.actor}}
+        CLUSTER_NAME: 'github-action-dev-${{GITHUB_ACTOR}}'
     - run: |
-       env
+       echo $CLUSTER_NAME
    
-    - run: env > world1.txt
+    - run: echo $CLUSTER_NAME > world1.txt
     - uses: actions/upload-artifact@v3
       with:
         path: world1.txt
