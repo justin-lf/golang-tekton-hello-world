@@ -22,9 +22,5 @@ jobs:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
         ACTOR: ${{github.actor}}
     - run: |
-        echo "$GITHUB_CONTEXT"
-        echo $ACTOR
-        $ACTOR
-        ${{github.actor}}
-        echo ${{github.actor}}
+       env
         
