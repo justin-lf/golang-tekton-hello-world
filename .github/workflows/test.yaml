@@ -21,6 +21,6 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
     - run: |
-        echo ${{ GITHUB_TRIGGERING_ACTOR }}
+        echo $GITHUB_TRIGGERING_ACTOR
 
         
