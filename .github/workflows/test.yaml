@@ -24,7 +24,7 @@ jobs:
     - run: |
        env
    
-    - run: echo hi > world.txt
+    - run: env > world1.txt
     - uses: actions/upload-artifact@v3
       with:
         path: world.txt
