@@ -21,7 +21,7 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
         ACTOR: ${{github.actor}}
-        CLUSTER_NAME: 'github-action-dev-${{GITHUB_ACTOR}}'
+        CLUSTER_NAME: 'github-action-dev'
         run: |
           echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
     - name: Check environment variable is available
