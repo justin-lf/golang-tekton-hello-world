@@ -22,9 +22,14 @@ jobs:
         SUPER_SECRET: ${{ secrets.GIT_USERNAME }}
         ACTOR: ${{github.actor}}
         CLUSTER_NAME: 'github-action-dev-${{GITHUB_ACTOR}}'
-    - run: |
-       echo $CLUSTER_NAME
-   
+        run: |
+          echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
+    - name: Check environment variable is available
+      run: |
+        echo "${{ env.joined }}"  # Should return argument1argument2
+    - name: Check argument 3 value
+      run: |
+        echo "${{env.argument3}}" # Will return the string $argument1$argument2 instead of the concatenated value
     - run: echo $CLUSTER_NAME > world1.txt
     - uses: actions/upload-artifact@v3
       with:
