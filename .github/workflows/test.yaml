@@ -17,12 +17,9 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-    - name: Setup Git
-      uses: actions/checkout@v3
-      with:
-        credentials: ${{secrets.TEST_PAT}}      
-        run: |
-          echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
+    - name: Setup Git    
+      run: |
+        echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
     - name: Check environment variable is available
       run: |
         echo "${{ env.joined }}"  # Should return argument1argument2
