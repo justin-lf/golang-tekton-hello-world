@@ -22,6 +22,7 @@ jobs:
         echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
     - name: Check environment variable is available
       run: |
+        env
         echo "${{ env.joined }}"  # Should return argument1argument2
     - name: Check argument 3 value
       run: |
