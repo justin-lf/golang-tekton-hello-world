@@ -20,7 +20,7 @@ jobs:
     - name: Setup Git    
       run: |
         test=$(cut -c 1-5<<< ${{env.ACTOR}})
-        echo "joined=$test" >> $GITHUB_ENV
+        echo "joined=action-$test" >> $GITHUB_ENV
     - name: Check environment variable is available
       run: |
         env
