@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Setup Git    
       run: |
-        echo "joined=${{env.CLUSTER_NAME}}"-"${{env.ACTOR}}" >> $GITHUB_ENV
+        echo "joined=${{env.ACTOR:0:5}}" >> $GITHUB_ENV
     - name: Check environment variable is available
       run: |
         env
