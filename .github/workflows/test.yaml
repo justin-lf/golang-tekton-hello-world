@@ -8,4 +8,4 @@ jobs:
   approved:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This PR was approved"
+      - run: echo "This PR was approved =" + github.event.review.state
