@@ -1,16 +1,13 @@
 name: 'Main1'
 
 on:
-  push:
-    
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  pull_request_review:
+    types: [submitted]
   
 permissions:
   contents: read
 env:
   ACTOR: ${{github.actor}}
-  CLUSTER_NAME: 'github-action-dev'
   
 jobs:
   terraform:
@@ -19,16 +16,4 @@ jobs:
     steps:
     - name: Setup Git    
       run: |
-        test=$(cut -c 1-5<<< ${{env.ACTOR}})
-        echo "joined=action-$test" >> $GITHUB_ENV
-    - name: Check environment variable is available
-      run: |
         env
-        echo "${{ env.joined }}"  # Should return argument1argument2
-    - name: Check argument 3 value
-      run: |
-        echo "${{env.argument3}}" # Will return the string $argument1$argument2 instead of the concatenated value
-    - run: echo $CLUSTER_NAME > world1.txt
-    - uses: actions/upload-artifact@v3
-      with:
-        path: world1.txt
