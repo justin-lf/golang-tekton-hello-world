@@ -1,18 +1,10 @@
-name: 'Main1'
-
 on:
-  pull_request_review
-  
-permissions:
-  contents: read
-env:
-  ACTOR: ${{github.actor}}
-  
+  pull_request_review:
+    types: [submitted]
+
 jobs:
-  terraform:
+  approved:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
-  
     steps:
-    - name: Setup Git    
-      run: |
-        env
+      - run: echo "This PR was approved"
