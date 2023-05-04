@@ -1,8 +1,8 @@
+name: 'PR'
+
 on:
   pull_request:
-    types: [open]
-    branches: 
-      - main
+    types: [opened, reopened]
 
 jobs:
   approved:
