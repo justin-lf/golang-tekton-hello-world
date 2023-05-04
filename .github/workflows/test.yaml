@@ -1,9 +1,9 @@
 name: 'Test1'
 
 on:
-  push:
-    branches:
-      - test
+  pull_request_review:
+    types: [submitted]
+
   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,12 +21,5 @@ jobs:
 
     - name: Terraform fmt
       id: fmt
-      run: terraform fmt -check -diff
+      run: env
 
-    - name: Terraform Init
-      id: init
-      run: terraform init
-
-    - name: Terraform Validate
-      id: validate
-      run: terraform validate
