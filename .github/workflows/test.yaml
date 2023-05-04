@@ -2,9 +2,7 @@ name: 'PR'
 
 on:
   pull_request_review:
-    types: [opened, reopened, submitted]
-
-permissions: read-all|write-all
+    types: [submitted]
 
 jobs:
   approved:
