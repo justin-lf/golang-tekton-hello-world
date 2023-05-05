@@ -27,7 +27,7 @@ jobs:
 
   approved:
     needs: changes
-    if: ${{ needs.changes.outputs.frontend == 'true' }} && github.event.review.state == 'approved'
+    if: ${{ needs.changes.outputs.approved == 'true' }} && github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
       - run: echo "This PR was approved"
