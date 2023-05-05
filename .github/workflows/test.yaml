@@ -3,6 +3,8 @@ name: 'PR'
 on:
   pull_request_review:
     types: [submitted]
+    paths:
+      - 'dev/**'
 
 jobs:
   submitted:
