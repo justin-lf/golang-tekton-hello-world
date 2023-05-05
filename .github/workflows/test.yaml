@@ -5,7 +5,12 @@ on:
     types: [submitted]
 
 jobs:
-  approved:
+  submitted:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This PR was approved =" + github.event.review.state
+      - run: echo "This comment submitted"
+  approved:
+    if github.event.review.state = 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This PR was approved"
