@@ -7,7 +7,7 @@ on:
 jobs:
   env:
     runs-on: ubuntu-latest
-    if: ${{ github.base_ref == 'refs/heads/main' }}
+    if: ${{ github.base_ref == 'main' }}
     steps:
       - run: env 
       
