@@ -1,12 +1,15 @@
 name: 'PR'
 
 on:
-  pull_request_review:
-    types: [submitted]
-    paths:
-      - 'dev/**'
+  pull_request:
+    types: [opened]
 
 jobs:
+  env:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+      
   # JOB to run change detection
   changes:
     runs-on: ubuntu-latest
