@@ -7,8 +7,9 @@ on:
 jobs:
   env:
     runs-on: ubuntu-latest
+    if: github.base_ref == 'refs/heads/main'
     steps:
-      - run: env
+      - run: echo 
       
   # JOB to run change detection
   changes:
