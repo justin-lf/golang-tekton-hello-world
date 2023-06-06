@@ -10,7 +10,7 @@ jobs:
   dostuff:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This PR was approved"
+      - run: echo "This is a Release"
    
   # JOB to run change detection
   changes:
@@ -35,4 +35,4 @@ jobs:
     if: ${{ needs.changes.outputs.approved == 'true' && github.event.review.state == 'approved' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This PR was approved"
+      - run: echo "Changes approved"
