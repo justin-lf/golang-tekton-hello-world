@@ -1,8 +1,12 @@
 name: 'PR'
 
 on:
-  pull_request_review:
-    types: [submitted]
+  push:
+    paths:
+      - 'dev/**'
+  pull_request:
+    types: [opened, reopened]
+    branches: [main]
     paths:
       - 'dev/**'
 
