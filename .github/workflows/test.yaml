@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This is a Release"
-      - ls jlst
+      - run: ls -l jsk
    
   # JOB to run change detection
   changes:
