@@ -26,10 +26,11 @@ jobs:
     - uses: LouisBrunner/checks-action@v1.6.1
       if: always()
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         name: Test XYZ
         conclusion: ${{ job.status }}
         output: |
-          {"summary":"${{ steps.test.outputs.summary  # JOB to run change detection  }}"}
+          {"summary":"${{ steps.test.outputs.summary }}"}
           
   changes:
     runs-on: ubuntu-latest
