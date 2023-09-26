@@ -9,15 +9,28 @@ on:
     branches: [main]
     paths:
       - 'dev/**'
-
+          
 jobs:
   dostuff:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This is a Release"
       - run: ls -l jsk
-   
-  # JOB to run change detection
+      
+  test_something:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/create-outputs@v0.0.0-fake
+      id: test
+    - uses: LouisBrunner/checks-action@v1.6.1
+      if: always()
+      with:
+        name: Test XYZ
+        conclusion: ${{ job.status }}
+        output: |
+          {"summary":"${{ steps.test.outputs.summary  # JOB to run change detection
+          
   changes:
     runs-on: ubuntu-latest
     # Required permissions
