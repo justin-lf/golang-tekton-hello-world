@@ -28,8 +28,8 @@ jobs:
       with:
         name: Test XYZ
         conclusion: ${{ job.status }}
-        output: |
-          {"summary":"${{ steps.test.outputs.summary  # JOB to run change detection
+        output: | 
+          {"summary":"${{ steps.test.outputs.summary  # JOB to run change detection  }}"}
           
   changes:
     runs-on: ubuntu-latest
