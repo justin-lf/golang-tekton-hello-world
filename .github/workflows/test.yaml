@@ -28,7 +28,7 @@ jobs:
       with:
         name: Test XYZ
         conclusion: ${{ job.status }}
-        output: | 
+        output: |
           {"summary":"${{ steps.test.outputs.summary  # JOB to run change detection  }}"}
           
   changes:
