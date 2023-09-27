@@ -47,9 +47,9 @@ jobs:
   #         approved:
   #           - 'dev/**'
 
-  approved:
-    needs: changes
-    if: ${{ needs.changes.outputs.approved == 'true' && github.event.review.state == 'approved' }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Changes approved"
+  # approved:
+  #   needs: changes
+  #   if: ${{ needs.changes.outputs.approved == 'true' && github.event.review.state == 'approved' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "Changes approved"
